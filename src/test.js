@@ -1,4 +1,8 @@
 import React from 'react'
+// import axios from 'axios'
+// import axiosJsonpAdapter from 'axios-jsonp'
+// import app from 'express'
+import jsonp from 'jsonp'
 
 class App extends React.Component {
   constructor (props) {
@@ -16,17 +20,19 @@ class App extends React.Component {
   }
 
   handleSubmit (e) {
-    window
-      .fetch(`https://api.zipaddress.net/?zipcode=${this.state.zipcode}`, {
-        mode: 'cors'
-      })
-      .then(res => {
-        return res.json()
-      })
-      .then(myJson => {
-        this.setState({ address: myJson.data.fullAddress })
-      })
-    e.preventDefault()
+    jsonp(
+      'https://api.zipaddress.net/?zipcode=1111111&callback=callbackFunk',
+      {
+        name: 'callbackFunk'
+      },
+      (error, data) => {
+        if (error) {
+          this.setState({ error })
+        } else {
+          this.setState({ address: data.fullAdress })
+        }
+      }
+    )
   }
 
   render () {
