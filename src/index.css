@@ -22,10 +22,12 @@ input {
 .spanA {
     white-space: nowrap;
     font-size: 23px;
+    font-weight: normal;
 }
 
 .spanB {
     color: red;
+    font-weight: bold;
 }
 
 .p2 {

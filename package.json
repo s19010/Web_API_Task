@@ -10,11 +10,14 @@
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0"
   },
+  "homepage": "https://s19010@github.com/s19010/Web_API_Task.git",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,10 +38,17 @@
     "@material-ui/core": "^4.9.3",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.43",
+    "axios": "^0.19.2",
+    "axios-jsonp": "^1.0.4",
     "expo": "^36.0.2",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
     "fetch-jsonp": "^1.1.3",
+    "gh-pages": "^2.2.0",
+    "jsonp": "^0.2.1",
     "material-ui": "^0.20.2",
     "prettier-standard": "^16.1.0",
+    "promise": "^8.0.3",
     "react-native-elements": "^1.2.7",
     "react-redux": "^7.2.0",
     "react-scroll": "^1.7.16",
