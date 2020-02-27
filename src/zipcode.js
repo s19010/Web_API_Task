@@ -19,6 +19,18 @@ class App extends React.Component {
     this.setState({ zipcode: e.target.value })
   }
 
+  /* handleSubmit (e) {
+    const script = document.createElement('script')
+    script.src = `https://api.zipaddress.net/?zipcode=${this.state.zipcode}&callback=callbackFunk`
+    window.callbackFunk = function (res) {
+      return res.json()
+    }.then(getJson => {
+      this.setState({ address: getJson.data.fullAddress })
+    })
+    document.body.appendChild(script)
+    e.preventDefault()
+  } */
+
   handleSubmit (e) {
     jsonp(
       `https://api.zipaddress.net/?zipcode=${this.state.zipcode}&callback=?`
